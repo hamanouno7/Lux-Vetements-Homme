@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LUX vêtements — Mode homme</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body id="catalogPage">
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu"><span></span></button>
+      <a class="logo" href="index.html#home">
+        <img src="logo-lux.png" width="48" height="48" alt="LUX vêtements" />
+        <span>LUX</span> vêtements
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" id="navHome">Accueil</a></li>
+        <li><a href="produits.html" id="navShop">Boutique</a></li>
+        <li><a href="index.html#categories" id="navCategories">Catégories</a></li>
+        <li><a href="index.html#contact" id="navContact">Contact</a></li>
+        <li><a href="produits.html" id="btnAllProducts">Voir tous les produits</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-dropdown">
+          <button type="button" class="lang-toggle" id="langToggleBtn">Français</button>
+          <div class="lang-menu" id="langMenu">
+            <button type="button" class="lang-option" data-lang="fr" id="langOptionFr">Français</button>
+            <button type="button" class="lang-option" data-lang="ar" id="langOptionAr">العربية</button>
+          </div>
+        </div>
+        <button class="cart-btn" id="openCartBtn" type="button">
+          <span id="cartLabelText">Panier</span> (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 id="heroTitle">Mode <span>Homme Luxe</span> pour les icônes modernes</h1>
+          <p id="heroText">Bienvenue chez LUX vêtements.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="index.html#shop" id="shopCollectionBtn">Voir la collection</a>
+            <a class="btn btn-outline" href="index.html#categories" id="browseCategoriesBtn">Parcourir les catégories</a>
+          </div>
+          <div class="delivery-badge delivery-badge--large" id="deliveryBadgeWrap">
+            <div id="deliveryBadgeInner" class="delivery-badge-inner"></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/hero-jeans.jpg" alt="Homme en jean, mode" width="800" height="1000" />
+        </div>
+      </div>
+      <div class="container loop-gallery">
+        <div class="loop-track" id="loopTrack"></div>
+      </div>
+      <div class="container">
+        <div class="state-box" id="loopState" style="display: none; margin-top: 12px"></div>
+      </div>
+      <div class="container brands-strip">
+        <div class="section-head reveal">
+          <div class="brands-title" id="brandsTitle">Marques avec lesquelles nous travaillons</div>
+        </div>
+        <div class="brands-list">
+          <div class="brand-card">
+            <img alt="Nike" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" />
+            <div class="brand-name">NIKE</div>
+          </div>
+          <div class="brand-card">
+            <img alt="Lacoste" src="lacoste.jpg" width="120" height="120" style="object-fit:contain;" />
+            <div class="brand-name">LACOSTE</div>
+          </div>
+          <div class="brand-card">
+            <img alt="Adidas" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" />
+            <div class="brand-name">ADIDAS</div>
+          </div>
+          <div class="brand-card">
+            <img alt="Jordan" src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg" />
+            <div class="brand-name">JORDAN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="sectionShopTitle">Boutique <span>signature</span></h2>
+          <p class="section-subtitle" id="sectionShopSub"></p>
+        </div>
+        <div class="filter-bar reveal" id="filterBar">
+          <button type="button" class="filter-btn active" data-category="all">All</button>
+          <button type="button" class="filter-btn" data-category="tshirts">tshirts</button>
+          <button type="button" class="filter-btn" data-category="hoodies">hoodies</button>
+          <button type="button" class="filter-btn" data-category="pants">pants</button>
+          <button type="button" class="filter-btn" data-category="shoes">shoes</button>
+          <button type="button" class="filter-btn" data-category="accessories">accessories</button>
+        </div>
+        <div class="shop-toolbar reveal">
+          <input class="search-input" id="searchInput" type="search" placeholder="" />
+          <button type="button" class="layout-kebab" id="layoutKebab" aria-label="Vue liste" title="Vue liste / grille">
+            <span class="layout-kebab-dot"></span>
+            <span class="layout-kebab-dot"></span>
+            <span class="layout-kebab-dot"></span>
+          </button>
+        </div>
+        <div class="price-filter reveal">
+          <div class="price-filter-head">
+            <span id="priceFilterLabel">Fourchette de prix</span>
+            <button type="button" class="preview-toggle" id="priceResetBtn">Reset</button>
+          </div>
+          <div class="price-values">
+            <input class="price-input" id="priceMinInput" min="0" step="1" type="number" value="0" />
+            <div class="price-divider">-</div>
+            <input class="price-input" id="priceMaxInput" min="0" step="1" type="number" value="0" />
+          </div>
+          <div class="range-wrap">
+            <div class="range-track"></div>
+            <div class="range-progress" id="rangeProgress"></div>
+            <input class="price-range" id="priceMinRange" max="1000" min="0" step="1" type="range" value="0" />
+            <input class="price-range" id="priceMaxRange" max="1000" min="0" step="1" type="range" value="1000" />
+          </div>
+        </div>
+        <div class="products-grid" id="productsContainer"></div>
+        <div class="state-box" id="stateBox" style="display: none"></div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="sectionCatTitle">Catégories <span>luxe</span></h2>
+          <p class="section-subtitle" id="sectionCatSub"></p>
+        </div>
+        <div class="categories-grid reveal">
+          <a class="category-pill" href="produits.html?category=tshirts">tshirts</a>
+          <a class="category-pill" href="produits.html?category=hoodies">hoodies</a>
+          <a class="category-pill" href="produits.html?category=pants">pants</a>
+          <a class="category-pill" href="produits.html?category=shoes">shoes</a>
+          <a class="category-pill" href="produits.html?category=accessories">accessories</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="sectionContactTitle">Contact <span>Luxury Team</span></h2>
+          <p class="section-subtitle" id="sectionContactSub"></p>
+        </div>
+        <div class="contact-box reveal">
+          <a class="contact-item" href="https://wa.me/21698137767" target="_blank" rel="noopener">
+            <div class="contact-title">📱 WhatsApp</div>
+            <div class="contact-value">+216 98 137 767</div>
+          </a>
+          <a class="contact-item" href="https://m.me/" target="_blank" rel="noopener">
+            <div class="contact-title">💬 Messenger</div>
+            <div class="contact-value">Lux Vetements Homme</div>
+          </a>
+          <a class="contact-item" href="https://instagram.com/" target="_blank" rel="noopener">
+            <div class="contact-title">📷 Instagram</div>
+            <div class="contact-value">@luxvetementshomme</div>
+          </a>
+          <a class="contact-item" href="tel:+21698137767">
+            <div class="contact-title">📞 Phone</div>
+            <div class="contact-value" id="callNowLbl">Call Now</div>
+          </a>
+          <a class="contact-item" href="mailto:contact@luxvetementshomme.com">
+            <div class="contact-title">✉ Contact</div>
+            <div class="contact-value">contact@luxvetementshomme.com</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="dim" id="cartDim"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <button class="cart-btn" id="closeCartBtn" type="button" style="align-self: flex-end; margin: 8px">✕</button>
+    <div class="cart-head">
+      <strong id="cartHeadLabel">Panier</strong>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div style="display: flex; justify-content: space-between; font-weight: 800; margin-bottom: 10px">
+        <span id="cartTotalLabel">Total</span>
+        <span id="cartTotal">0 DT</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" type="button" style="width: 100%">Valider mes achats</button>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="container">
+      <span id="footerNote">LUX vêtements</span> — © <span id="year"></span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/index-page.js"></script>
+</body>
+</html>
